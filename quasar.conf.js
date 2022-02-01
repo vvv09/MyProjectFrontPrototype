@@ -28,7 +28,10 @@ module.exports = configure(function (ctx) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
-      'app.scss'
+      'app.sass',
+      'mobile.pages.transition.scss',
+      'custom.variables.handling.sass',
+      'fonts.sass',
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
@@ -97,7 +100,13 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Dialog',
+        'Notify',
+        'Loading',
+        'LocalStorage',
+        'AppFullscreen',
+      ]
     },
 
     // animations: 'all', // --- includes all animations

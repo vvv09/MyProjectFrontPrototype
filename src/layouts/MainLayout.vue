@@ -12,8 +12,12 @@
       </router-view>
     </q-page-container>
 
-    <q-footer bordered class="bg-white text-primary">
+    <q-footer
+      bordered
+      :class="dark ? 'bg-header-dark text-header-dark' : 'bg-header-light text-header-light'"
+    >
       <q-tabs
+        dense
         no-caps
         active-color="primary"
         indicator-color="transparent"
@@ -39,6 +43,11 @@
       return {
         store
       }
+    },
+    computed: {
+      dark: function () {
+        return this.$q.dark.isActive
+      },
     }
   })
 </script>

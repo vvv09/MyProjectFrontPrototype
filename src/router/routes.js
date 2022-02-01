@@ -4,39 +4,60 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', redirect: '/home' },
-      { path: '/home',
-        component: () => import('pages/Home/Home.vue'),
+      { path: '', redirect: '/diary' },
+      { path: '/diary',
+        component: () => import('pages/Diary/Diary.vue'),
         children: [
           {
-            path: '/home/child',
-            component: () => import('pages/Home/Child.vue'),
+            path: '/diary/child',
+            component: () => import('pages/Diary/Children/Practice.vue'),
             children: [
               {
-                path: '/home/child/grandchild',
-                component: () => import('pages/Home/Grandchild.vue'),
+                path: '/diary/child/grandchild',
+                component: () => import('pages/Diary/Children/PracticeStart.vue'),
               }
             ]
           }
         ]
       },
-      { path: '/questions',
-        component: () => import('pages/Questions/Questions.vue'),
+      { path: '/tables',
+        component: () => import('pages/Tables/Tables.vue'),
         children: [
           {
-            path: '/questions/answer',
-            component: () => import('pages/Questions/Answer.vue'),
+            path: '/tables/answer',
+            component: () => import('pages/Tables/Answer.vue'),
           }
         ]
       },
-      { path: '/images',
-        component: () => import('pages/Images/Images.vue'),
+      { path: '/numbers',
+        component: () => import('pages/Numbers/Numbers.vue'),
         children: [
           {
-            path: '/images/:id',
-            component: () => import('pages/Images/Image.vue'),
+            path: '/numbers/:id',
+            component: () => import('pages/Numbers/Image.vue'),
           }
         ]
+      },
+      { path: '/tides',
+        component: () => import('pages/Tides/Tides.vue'),
+        children: [
+          {
+            path: '/tides/:id',
+            component: () => import('pages/Tides/Answer.vue'),
+          }
+        ]
+      },
+      { path: '/library',
+        component: () => import('pages/Library/Library.vue'),
+        children: [
+          {
+            path: '/library/:id',
+            component: () => import('pages/Library/Image.vue'),
+          }
+        ]
+      },
+      { path: '/settings',
+        component: () => import('pages/Settings/Settings.vue'),
       },
     ]
   },
