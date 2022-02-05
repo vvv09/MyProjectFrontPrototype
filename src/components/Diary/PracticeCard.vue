@@ -9,7 +9,7 @@
           <div class="text-h5">{{ session.title }}</div>
         </div>
         <div class="col-2">
-          <q-icon size="62px" name="trending_up"/>
+          <q-icon size="62px" name="chevron_right"/>
         </div>
       </div>
     </q-card-section>
