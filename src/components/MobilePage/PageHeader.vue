@@ -9,10 +9,11 @@
     >
       <slot name="buttons-left"/>
       <div
-        class="page-header-title q-pl-none q-toolbar__title ellipsis text-body1"
+        class="q-pl-none q-toolbar__title ellipsis text-body1"
       >
         <slot name="title"/>
       </div>
+      <slot name="buttons-right"/>
     </div>
   </header>
 </template>

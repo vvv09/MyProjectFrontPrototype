@@ -13,7 +13,7 @@
         <div class="text-h5 q-mb-md">This is a Child Page!</div>
 
         <q-btn
-          to="/diary/child/grandchild"
+          to="/numbers/child/grandchild"
           label="Go to Grandchild Page"
           color="primary"
           class="full-width q-mb-md"

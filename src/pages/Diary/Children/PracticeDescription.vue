@@ -3,10 +3,10 @@
     <mobile-page-header>
       <template #buttons-left>
         <mobile-page-header-button-back
-          label="Images"
+          label="Session"
         />
       </template>
-      <template #title>Image</template>
+      <template #title>Practice</template>
     </mobile-page-header>
     <mobile-page-body>
       <transition
@@ -15,16 +15,35 @@
         leave-active-class="animated fadeOut slower"
       >
         <div
-          v-if="image"
+          v-if="practice"
         >
           <q-img
-            :src="image.url"
+            :src="practice.url"
             no-spinner
             no-transition
             class="no-pointer-events"
           />
+
           <div class="q-pa-lg">
-            <div class="q-mb-md text-h5">{{ image.caption }}</div>
+            <div class="q-mb-md text-h5">{{ practice.caption }}</div>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Amet earum fuga nam nisi.
+              Alias, aliquam animi consequatur culpa inventore
+              neque officia perferendis quo repudiandae.
+              A aliquam magnam minus possimus tempore!</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Amet earum fuga nam nisi.
+              Alias, aliquam animi consequatur culpa inventore
+              neque officia perferendis quo repudiandae.
+              A aliquam magnam minus possimus tempore!</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Amet earum fuga nam nisi.
+              Alias, aliquam animi consequatur culpa inventore
+              neque officia perferendis quo repudiandae.
+              A aliquam magnam minus possimus tempore!</p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Amet earum fuga nam nisi.
@@ -36,10 +55,10 @@
               v-model="expanded"
               icon="las la-eye"
               label="JSON"
-              caption="See image object in JSON format"
+              caption="See practice object in JSON format"
             >
               <pre>
-                {{ image }}
+                {{ practice }}
               </pre>
             </q-expansion-item>
           </div>
@@ -51,12 +70,11 @@
 
 <script>
 
-  import { onActivated, onDeactivated, ref } from 'vue'
-  import { useRoute } from 'vue-router'
+  import {onActivated, onDeactivated, ref} from 'vue'
+  import {useRoute} from 'vue-router'
   import store from 'src/myStore'
 
   export default ({
-    name: 'Images',
     data() {
       return {
         expanded: false
@@ -64,20 +82,20 @@
     },
     setup() {
 
-      let image = ref()
+      let practice = ref()
 
       onActivated(() => {
         let route = useRoute()
-        image.value = store.getters.getImage(route.params.id)
+        practice.value = store.getters.getPractice(route.params.practiceId)
       })
 
       onDeactivated(() => {
-        image.value = null
+        practice.value = null
       })
 
       return {
         store,
-        image
+        practice
       }
     }
   })

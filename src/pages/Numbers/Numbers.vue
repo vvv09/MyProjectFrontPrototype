@@ -1,35 +1,43 @@
 <template>
   <mobile-page>
     <mobile-page-header>
-      <template #title>Gematria Dictionary</template>
+      <template #title>Diary</template>
     </mobile-page-header>
     <mobile-page-body>
-      <div class="row">
-        <router-link
-            v-for="image in store.state.images"
-            :key="image.id"
-            :to="`/numbers/${ image.id }`"
-            class="col-6"
-        >
-          <q-img
-            :src="image.url"
-            :ratio="1"
-          />
-        </router-link>
+      <div class="q-pa-lg">
+
+        <div class="text-h5 q-mb-md">This is Gematria Number page!!!</div>
+
+        <q-btn
+          to="/numbers/child"
+          label="Back"
+          color="primary"
+          class="full-width q-mb-md"
+          rounded
+          unelevated
+          no-caps
+        />
+
+        <q-btn
+          to="/tables/answer"
+          label="Go to Child Page in another section"
+          color="warning"
+          class="full-width q-mb-md"
+          rounded
+          unelevated
+          no-caps
+        />
+
+        <p v-for="i in 20" :key="i">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto autem consectetur consequuntur dignissimos ea earum eos ex incidunt magnam, nam natus nesciunt provident quam quo reprehenderit sequi soluta totam.</p>
       </div>
     </mobile-page-body>
   </mobile-page>
 </template>
 
 <script>
-import store from 'src/myStore'
-export default ({
-  name: 'Images',
-  setup() {
-    return {
-      store
-    }
-  }
-})
+
+  export default ({
+    name: 'Home'
+  })
 
 </script>

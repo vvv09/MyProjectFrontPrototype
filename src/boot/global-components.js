@@ -10,6 +10,7 @@ const globalComponents = {
   'page-tab-panels': require('components/Common/PageTabPanels').default,
   'page-block-title': require('components/Common/PageBlockTitle').default,
   'page-frame': require('components/Common/PageFrame').default,
+  'hidden-area': require('components/Common/HiddenArea').default,
 }
 
 export default boot(async ({ app }) => {

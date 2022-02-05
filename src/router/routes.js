@@ -9,12 +9,20 @@ const routes = [
         component: () => import('pages/Diary/Diary.vue'),
         children: [
           {
-            path: '/diary/child',
-            component: () => import('pages/Diary/Children/Practice.vue'),
+            path: '/diary/practice-resume',
+            component: () => import('pages/Diary/Children/PracticeResume.vue'),
+          },
+          {
+            path: '/diary/practice-create',
+            component: () => import('pages/Diary/Children/PracticeCreate.vue'),
+          },
+          {
+            path: '/diary/:sessionId',
+            component: () => import('pages/Diary/Children/PracticeSession.vue'),
             children: [
               {
-                path: '/diary/child/grandchild',
-                component: () => import('pages/Diary/Children/PracticeStart.vue'),
+                path: '/diary/:sessionId/:practiceId',
+                component: () => import('pages/Diary/Children/PracticeDescription.vue'),
               }
             ]
           }
@@ -33,8 +41,14 @@ const routes = [
         component: () => import('pages/Numbers/Numbers.vue'),
         children: [
           {
-            path: '/numbers/:id',
-            component: () => import('pages/Numbers/Image.vue'),
+            path: '/numbers/child',
+            component: () => import('pages/Numbers/Children/Practice.vue'),
+            children: [
+              {
+                path: '/numbers/child/grandchild',
+                component: () => import('pages/Numbers/Children/PracticeStart.vue'),
+              }
+            ]
           }
         ]
       },
